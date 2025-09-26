@@ -5,3 +5,7 @@ def average_length(user_string):
     else:
         avg = 0
     return avg
+
+def reverse_string(user_string):
+    reversed_string = user_string[::-1]
+    return reversed_string
