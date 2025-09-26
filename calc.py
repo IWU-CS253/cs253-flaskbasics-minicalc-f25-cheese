@@ -11,7 +11,16 @@ def calculate(current_value, num, clear):
                 return str(eval(current_value))
             except:
                 return 'Error'
+        elif num == 'x²':
+            try:
+                value = float(current_value)
+                return str(value * value)
+            except:
+                return 'Error'
         else:
             # Append the pressed button value to the current value
             return current_value + num
-    return current_value
+        return current_value
+
+def squared_function():
+    return
