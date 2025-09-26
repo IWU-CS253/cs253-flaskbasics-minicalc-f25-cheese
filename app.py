@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from calc import calculate
 import wordstats
 
+
 app = Flask(__name__)
 
 
@@ -26,7 +27,10 @@ def wordstatsindex():
     if request.method == 'POST':
         user_string = request.form['user_string']
         average_length = wordstats.average_length(user_string)
-        return render_template('wordstats.html', average_length=average_length)
+        reversed_string = wordstats.reverse_string(user_string)
+        word_count = wordstats.word_counter(user_string)
+        character_total = wordstats.total_characters(user_string)
+        return render_template('wordstats.html', average_length=average_length, reversed_string=reversed_string, word_count=word_count, character_total=character_total)
     else:
         return render_template('wordstats.html', average_length=None)
 
