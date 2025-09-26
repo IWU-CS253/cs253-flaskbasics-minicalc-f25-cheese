@@ -1,9 +1,16 @@
 # calc.py
+import math
 
 def calculate(current_value, num, clear):
     if clear:
         return ''  # Clear the current value if clear button is pressed
     elif num:
+        if num == 'sqrt':
+            try:
+                # Safely evaluate the current expression
+                return str(math.sqrt(eval(current_value)))
+            except:
+                return 'Error'
         if num == '=':
             # Calculate result if '=' is pressed
             try:
